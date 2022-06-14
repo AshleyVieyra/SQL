@@ -1,0 +1,44 @@
+CREATE table authors (id INTEGER PRIMARY KEY, FULLNAME TEXT, GENRE TEXT, AGE INTEGER);
+
+INSERT into authors (fullname, genre, age) VALUES ("Stephen King", "Horror", "75"); 
+INSERT into authors (fullname, genre, age) VALUES ("Colleen Hoover", "youg adult fiction", "42");
+INSERT into authors (fullname, genre, age) VALUES ("Nora Roberts", "Romance", "71");
+INSERT into authors (fullname, genre, age) VALUES ("Debbie Macomber", "Romance", "73");
+INSERT into authors (fullname, genre, age) VALUES ("Tana French", "psychological mystery", "49");
+INSERT into authors (fullname, genre, age) VALUES ("Neil Gaiman", "Non-fiction", "61");
+
+CREATE table birthplace (id INTEGER PRIMARY KEY, name TEXT, year INTEGER); 
+
+INSERT into birthplace (name, year) VALUES ("Portland, Maine", "1947");
+INSERT into birthplace (name, year) VALUES ("Sulphur Springs, Texas", "1979");
+INSERT into birthplace (name, year) VALUES ("Silver Spring, Maryland", "1950");
+INSERT into birthplace (name, year) VALUES ("Yakina, Washington", "1948");
+INSERT into birthplace (name, year) VALUES ("Burlington, Vermont", "1973"); 
+INSERT into birthplace (name, year) VALUES ("Portchester, United Kingdom", "1960"); 
+
+
+
+CREATE table FamilyLife (id INTEGER PRIMARY KEY, SpouseName TEXT, children INTEGER);
+
+INSERT into FamilyLife (SpouseName, children) VALUES ("NULL", "NULL"); 
+INSERT into FamilyLife (SpouseName, children) VALUES ("William Hoover", "3");
+INSERT into FamilyLife (SpouseName, children) VALUES ("Ronald Brinke", "2"); 
+INSERT into FamilyLife (SpouseName, children) VALUES ("Wayne Macomber", "3");
+INSERT into FamilyLife (SpouseName, children) VALUES ("Anthony Breatnach", "NULL"); 
+INSERT into FamilyLife (SpouseName, children) VALUES ("Mary Mcgrath","4"); 
+
+
+Make a table showing the name and genre of the author and their birthplace 
+
+SELECT authors.fullname, authors.genre, birthplace.name FROM authors
+    JOIN birthplace 
+    ON authors.id = birthplace.id; 
+
+
+
+make a table that shows the genre of the author with the year they were born 
+    
+SELECT authors.fullname,authors.genre, birthplace.year FROM authors 
+    JOIN birthplace 
+    ON authors.id = birthplace.id; 
+    
